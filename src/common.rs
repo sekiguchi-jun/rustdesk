@@ -1802,6 +1802,11 @@ pub fn load_custom_client() {
         };
         read_custom_client(&data.trim());
     }
+    // FGATE Support: incoming-only mode
+    config::HARD_SETTINGS
+        .write()
+        .unwrap()
+        .insert("conn-type".to_owned(), "incoming".to_owned());
 }
 
 fn read_custom_client_advanced_settings(
