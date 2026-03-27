@@ -1802,7 +1802,8 @@ pub fn load_custom_client() {
         };
         read_custom_client(&data.trim());
     }
-    // FGATE Support: incoming-only mode + hide settings + force server/key
+    // FGATE Support: app name, incoming-only mode, hide settings, force server/key
+    *config::APP_NAME.write().unwrap() = "FGATE Support".to_owned();
     {
         let mut hard = config::HARD_SETTINGS.write().unwrap();
         hard.insert("conn-type".to_owned(), "incoming".to_owned());
