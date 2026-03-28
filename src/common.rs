@@ -1802,11 +1802,12 @@ pub fn load_custom_client() {
         };
         read_custom_client(&data.trim());
     }
-    // FGATE Support: app name, incoming-only, force server/key (settings screen enabled for debug)
+    // FGATE Support: app name, incoming-only, hide settings, force server/key
     *config::APP_NAME.write().unwrap() = "FGATE Support".to_owned();
     {
         let mut hard = config::HARD_SETTINGS.write().unwrap();
         hard.insert("conn-type".to_owned(), "incoming".to_owned());
+        hard.insert("disable-settings".to_owned(), "Y".to_owned());
         hard.insert("password".to_owned(), "Fgatefgate#$%111".to_owned());
         hard.insert("disable-change-permanent-password".to_owned(), "Y".to_owned());
     }
