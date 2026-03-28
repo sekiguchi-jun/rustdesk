@@ -1807,13 +1807,13 @@ pub fn load_custom_client() {
     {
         let mut hard = config::HARD_SETTINGS.write().unwrap();
         hard.insert("conn-type".to_owned(), "incoming".to_owned());
-        hard.insert("allow-websocket".to_owned(), "Y".to_owned());
     }
     {
         let mut overwrite = config::OVERWRITE_SETTINGS.write().unwrap();
         overwrite.insert("custom-rendezvous-server".to_owned(), "rustdesk555.fgate-inc.com:80".to_owned());
         overwrite.insert("relay-server".to_owned(), "rustdesk555.fgate-inc.com:443".to_owned());
         overwrite.insert("key".to_owned(), "vpw5RF99HGrxMwGekhcdmMeegd5KWkvBikhX92wXU1M=".to_owned());
+        overwrite.insert("allow-websocket".to_owned(), "Y".to_owned());
     }
 }
 
