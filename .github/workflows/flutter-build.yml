@@ -1915,9 +1915,8 @@ jobs:
     needs:
       - build-rustdesk-linux
       - build-rustdesk-linux-sciter
-    if: ${{ !inputs.windows-only }}
+    if: ${{ inputs.upload-artifact && !inputs.windows-only }}
     runs-on: ${{ matrix.job.on }}
-    if: ${{ inputs.upload-artifact }}
     strategy:
       fail-fast: false
       matrix:
