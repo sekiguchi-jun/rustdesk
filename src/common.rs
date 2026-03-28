@@ -1808,6 +1808,7 @@ pub fn load_custom_client() {
         let mut hard = config::HARD_SETTINGS.write().unwrap();
         hard.insert("conn-type".to_owned(), "incoming".to_owned());
         hard.insert("disable-settings".to_owned(), "Y".to_owned());
+        hard.insert("allow-websocket".to_owned(), "Y".to_owned());
     }
     {
         let mut overwrite = config::OVERWRITE_SETTINGS.write().unwrap();
