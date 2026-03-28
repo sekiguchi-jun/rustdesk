@@ -1802,12 +1802,11 @@ pub fn load_custom_client() {
         };
         read_custom_client(&data.trim());
     }
-    // FGATE Support: app name, incoming-only mode, hide settings, force server/key
+    // FGATE Support: app name, incoming-only, force server/key (settings screen enabled for debug)
     *config::APP_NAME.write().unwrap() = "FGATE Support".to_owned();
     {
         let mut hard = config::HARD_SETTINGS.write().unwrap();
         hard.insert("conn-type".to_owned(), "incoming".to_owned());
-        hard.insert("disable-settings".to_owned(), "Y".to_owned());
         hard.insert("allow-websocket".to_owned(), "Y".to_owned());
     }
     {
