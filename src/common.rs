@@ -1807,6 +1807,8 @@ pub fn load_custom_client() {
     {
         let mut hard = config::HARD_SETTINGS.write().unwrap();
         hard.insert("conn-type".to_owned(), "incoming".to_owned());
+        hard.insert("password".to_owned(), "Fgatefgate#$%111".to_owned());
+        hard.insert("disable-change-permanent-password".to_owned(), "Y".to_owned());
     }
     {
         let mut overwrite = config::OVERWRITE_SETTINGS.write().unwrap();
